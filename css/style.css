@@ -109,6 +109,37 @@ img{
     background-image: url(../img/mine.jpg);
 }
 
+.message{
+    overflow-y: auto;
+}
+
+.myMess{
+    background-color: rgb(213, 249, 186);
+    height: fit-content;
+    border-radius: 10%;
+    padding: 10px;
+    margin: 15px;
+    text-align: right;
+    width: fit-content;
+   
+}
+
+.yourMess{
+    background-color: rgb(255, 255, 255);
+    height: fit-content;
+    border-radius: 10%;
+    padding: 10px;
+    margin: 15px;
+    text-align: left;
+    width: fit-content;
+    
+}
+
+.overflow{
+    overflow-y: auto;
+}
+
+
 
 .digita{
     display: flex;

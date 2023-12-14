@@ -3,6 +3,8 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            addMess :'',
+            activeChat : 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -170,7 +172,8 @@ createApp({
        } 
     },
     methods:{
-  
+        
+        
 
     }
 }).mount('#app')
