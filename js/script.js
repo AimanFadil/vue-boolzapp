@@ -3,7 +3,8 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
-            addMess :'',
+            selectedUser: null,
+            selectedChat: null,
             activeChat : 0,
             contacts: [
                 {
@@ -172,16 +173,11 @@ createApp({
        } 
     },
     methods:{
-        showChat(){
-            console.log(this.contacts)
-            if(this.contacts.visible){
-                return true
-            }
-            else{
-                
-            }
+        showChat(contatti) {
+            this.activeChat = contatti;
         }
 
+       
       
 
     }

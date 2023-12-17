@@ -47,8 +47,8 @@
                             </div>
                         </div>
                         <div class="overflow">
-                            <div class="col-12" @click="showChat" >
-                                <div class="contentTopUser bg-white height-85 p-3" v-for="contatti, index in contacts" :key="contatti.name" >
+                            <div class="col-12"  @click="showChat(contatti)" >
+                                <div class="contentTopUser bg-white height-85 p-3" v-for="contatti, index in contacts" :key="index" >
                                     <div class="d-inline-flex">
                                         <img :src="contatti.avatar" alt="">    
                                         <span class="px-2">{{ contatti.name }}<br><span class=" grey">Ultimo messaggio inviato</span></span> 
@@ -60,12 +60,12 @@
                     </div>
                 </div>
                 <!-- versione dinamica non funzionante -->
-              <!--   <div class="chat d-flex flex-column" v-for="contatti, index in contacts" :key="contatti.name" :class="contatti.visible ? '': 'display-none'">
-                    <div class="col-12 ">
+                <!-- <div class="chat d-flex flex-column " v-for="contatti, index in contacts" :key="contatti.name" >
+                    <div class="col-12 " >
                         <div class="contentTopUser height-70 mainBg" >
                             <div class="d-inline-flex">
-                                <img class="imgTopRubrica" :src="contatti.avatar" alt="">    
-                                <span class="px-2">{{ contatti.name }}<br><span class=" grey">Ultimo accesso oggi alle 12:00</span></span> 
+                                <img class="imgTopRubrica" :src="`./${contacts[activeChat].avatar}`" alt="">    
+                                <span class="px-2">{{contacts[activeChat].name}}<br><span class=" grey">Ultimo accesso oggi alle 12:00</span></span> 
                             </div>
                             <div class="d-inline d-flex p-3">
                                 <i class="fa-solid fa-magnifying-glass px-1" style="color: #B1B1B1;"></i>
@@ -84,17 +84,17 @@
                     </div>
                     <div class="digita mainBg p-1">
                         <div class="col-1"><i class="fa-regular fa-face-smile fa-2x px-3" style="color: #6B7376;"></i></div>
-                        <div class="col-10"><input class="form-control"  v-model="addMess" type="text" placeholder="Scrivi un messaggio" aria-label="default input example"></div>
+                        <div class="col-10"><input class="form-control"   type="text" placeholder="Scrivi un messaggio" aria-label="default input example"></div>
                         <div class="col-1"><i class="fa-solid fa-microphone fa-2x px-3" style="color: #6B7376;"></i></div>
                     </div>
-                </div> --> 
+                </div> -->   
                 <!-- Versione statica  -->
                 <div class="chat d-flex flex-column" >
                     <div class="col-12">
                         <div class="contentTopUser height-70 mainBg" >
                             <div class="d-inline-flex">
-                                <img class="imgTopRubrica" src="./img/avatar_1.jpg" alt="">    
-                                <span class="px-2">Michele<br><span class=" grey">Ultimo accesso oggi alle 12:00</span></span> 
+                                <img class="imgTopRubrica" :src="`./${contacts[activeChat].avatar}`" alt="">    
+                                <span class="px-2">{{contacts[activeChat].name}}<br><span class=" grey">Ultimo accesso oggi alle 12:00</span></span> 
                             </div>
                             <div class="d-inline d-flex p-3">
                                 <i class="fa-solid fa-magnifying-glass px-1" style="color: #B1B1B1;"></i>

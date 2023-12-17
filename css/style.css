@@ -107,6 +107,7 @@ img{
 
 .chat{
     background-image: url(../img/mine.jpg);
+    
 }
 
 .message{
@@ -148,10 +149,10 @@ img{
     flex-direction: row;
 }
 
-.visible{
+.active{
     display: block;
 }
 
-.notVisible{
+.notActive{
     display: none;
 }
