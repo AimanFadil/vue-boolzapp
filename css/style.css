@@ -89,7 +89,7 @@ main{
 }
 
 .height-792{
-    min-height: 792px;
+    height: 792px;
 }
 
 img{
@@ -111,7 +111,7 @@ img{
 }
 
 .message{
-    overflow-y: auto;
+    
 }
 
 .myMess{
@@ -120,11 +120,9 @@ img{
     border-radius: 10%;
     padding: 10px;
     margin: 15px;
-    position: relative;
-    top: -3px;
-    left: 587px;
+    
     width: fit-content;
-   
+    float: right;
 }
 
 .yourMess{
@@ -156,3 +154,5 @@ img{
 .notActive{
     display: none;
 }
+
+

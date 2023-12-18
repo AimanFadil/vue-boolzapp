@@ -47,8 +47,8 @@
                             </div>
                         </div>
                         <div class="overflow">
-                            <div class="col-12"  @click="showChat(contatti)" >
-                                <div class="contentTopUser bg-white height-85 p-3" v-for="contatti, index in contacts" :key="index" >
+                            <div class="col-12"  >
+                                <div class="contentTopUser bg-white height-85 p-3" v-for="contatti, index in contacts" :key="index" @click="showChat(index)">
                                     <div class="d-inline-flex">
                                         <img :src="contatti.avatar" alt="">    
                                         <span class="px-2">{{ contatti.name }}<br><span class=" grey">Ultimo messaggio inviato</span></span> 
@@ -59,11 +59,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- versione dinamica non funzionante -->
-                <!-- <div class="chat d-flex flex-column " v-for="contatti, index in contacts" :key="contatti.name" >
-                    <div class="col-12 " >
+                <!-- Versione statica  -->
+                <div class="chat d-flex flex-column" >
+                    <div class="col-12">
                         <div class="contentTopUser height-70 mainBg" >
-                            <div class="d-inline-flex">
+                            <div class="d-inline-flex" >
                                 <img class="imgTopRubrica" :src="`./${contacts[activeChat].avatar}`" alt="">    
                                 <span class="px-2">{{contacts[activeChat].name}}<br><span class=" grey">Ultimo accesso oggi alle 12:00</span></span> 
                             </div>
@@ -75,43 +75,13 @@
                         </div>
                     </div>
                     <div class="message height-792  d-flex flex-column" >
-                        <div class="col-12" >
-                            <div class="myMess">{{ contatti.messages[0].message }}</div>  
-                        </div>
-                        <div class="col-12">
-                            <div class="yourMess">{{ contatti.messages[1].message }}</div>
-                        </div>
-                    </div>
-                    <div class="digita mainBg p-1">
-                        <div class="col-1"><i class="fa-regular fa-face-smile fa-2x px-3" style="color: #6B7376;"></i></div>
-                        <div class="col-10"><input class="form-control"   type="text" placeholder="Scrivi un messaggio" aria-label="default input example"></div>
-                        <div class="col-1"><i class="fa-solid fa-microphone fa-2x px-3" style="color: #6B7376;"></i></div>
-                    </div>
-                </div> -->   
-                <!-- Versione statica  -->
-                <div class="chat d-flex flex-column" >
-                    <div class="col-12">
-                        <div class="contentTopUser height-70 mainBg" >
-                            <div class="d-inline-flex">
-                                <img class="imgTopRubrica" :src="`./${contacts[activeChat].avatar}`" alt="">    
-                                <span class="px-2">{{contacts[activeChat].name}}<br><span class=" grey">Ultimo accesso oggi alle 12:00</span></span> 
+                        <div v-for="(message, index) in contacts[activeChat].messages">
+                            <div class="col-12"  v-if="message.status === 'sent'">
+                                <div class="myMess">{{ message.message}}</div>   
                             </div>
-                            <div class="d-inline d-flex p-3">
-                                <i class="fa-solid fa-magnifying-glass px-1" style="color: #B1B1B1;"></i>
-                                <i class="fa-solid fa-link  px-1"  style="color: #B1B1B1;"></i>
-                                <i class="fa-solid fa-ellipsis-vertical  px-1"  style="color: #B1B1B1;"></i>
-                            </div>   
-                        </div>
-                    </div>
-                    <div class="message height-792  d-flex flex-column">
-                        <div class="col-12" >
-                            <div class="myMess">Hai portato a spasso il cane?</div>  
-                        </div>
-                        <div class="col-12">
-                            <div class="myMess">Ricorda di stendere i panni</div>
-                        </div>
-                        <div class="col-12">
-                            <div class="yourMess">Tutto fatto!</div>
+                            <div class="col-12" v-else="">
+                                <div class="yourMess">{{ message.message}}</div>   
+                            </div>
                         </div>
                     </div>
                     <div class="digita mainBg p-1">
