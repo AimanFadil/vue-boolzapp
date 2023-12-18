@@ -4,6 +4,7 @@ createApp({
     data(){
         return{
             Mess: "",
+            Cerca: "",
             activeChat : 0,
             contacts: [
                 {
@@ -176,31 +177,8 @@ createApp({
             this.activeChat = index;
             console.log(index)
         },
-        /* addMess() {
-            if (this.Mess.length > 0) {
-                const messaggioNuovo = {
-                    date: "18/01/2023 16:17:00",
-                    message: this.Mess,
-                    status: "sent",
-                };
-                this.contacts[this.activeChat].messages.push(messaggioNuovo);
-                this.Mess = "";
-            }
-
-            setTimeout(
-                ()=> {
-                    let messaggioRicevuto = {
-                        date: "18/01/2023 16:20:00",
-                        text: "Ok",
-                        status: 'received'
-                    };
-
-                    this.contacts[this.activeChat].messages.push(messaggioRicevuto);
-
-                },1000
-            );
-        }, */
-        addMess() {
+      
+        addMess: function() {
             let messaggioNuovo = {
                 date: "18/01/2023 17:17:00",
                 message: this.Mess,
@@ -221,14 +199,16 @@ createApp({
                 }, 1000);
             }
         },
-       
         
-        
-        
-       
-
-       
-      
-
+    },
+    computed:{
+        filtro() {
+            return this.contacts.filter(
+                parola => {
+                    return parola.name.toLocaleLowerCase().includes(this.Cerca.toLowerCase());
+                }
+            );
+        }, 
     }
+    
 }).mount('#app') 
