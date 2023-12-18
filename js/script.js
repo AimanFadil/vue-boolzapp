@@ -3,8 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
-            selectedUser: null,
-            selectedChat: null,
+            Mess: "",
             activeChat : 0,
             contacts: [
                 {
@@ -176,7 +175,56 @@ createApp({
         showChat: function (index) {
             this.activeChat = index;
             console.log(index)
-        }
+        },
+        /* addMess() {
+            if (this.Mess.length > 0) {
+                const messaggioNuovo = {
+                    date: "18/01/2023 16:17:00",
+                    message: this.Mess,
+                    status: "sent",
+                };
+                this.contacts[this.activeChat].messages.push(messaggioNuovo);
+                this.Mess = "";
+            }
+
+            setTimeout(
+                ()=> {
+                    let messaggioRicevuto = {
+                        date: "18/01/2023 16:20:00",
+                        text: "Ok",
+                        status: 'received'
+                    };
+
+                    this.contacts[this.activeChat].messages.push(messaggioRicevuto);
+
+                },1000
+            );
+        }, */
+        addMess() {
+            let messaggioNuovo = {
+                date: "18/01/2023 17:17:00",
+                message: this.Mess,
+                status: "sent",
+            };
+            if (this.Mess.length > 0) {
+                this.contacts[this.activeChat].messages.push(messaggioNuovo);
+                this.Mess = "";
+            }
+            let messaggioRicevuto = {
+                date: "18/01/2023 17:20:00",
+                message: "ok",
+                status: "received",
+            };
+            if (messaggioNuovo.message !== "") {
+                setTimeout(() => {
+                    this.contacts[this.activeChat].messages.push(messaggioRicevuto);
+                }, 1000);
+            }
+        },
+       
+        
+        
+        
        
 
        
