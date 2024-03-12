@@ -1,55 +1,57 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* BG COLOR */
-.headerTopBg{
+.headerTopBg {
     background-color: rgb(0, 150, 136);
 }
 
-.mainBg{
+.mainBg {
     background-color: rgb(219, 219, 212);
 }
 
-.bg-cele{
+.bg-cele {
     background-color: rgb(142, 218, 252);
 }
 
-.grey{
+.grey {
     color: grey;
 }
 
 
 
 /* HEADER */
-header{
-    height: 100px;
-    background-color: rgb(0, 150, 136);;
+header {
+    height: 110px;
+    background-color: rgb(0, 150, 136);
+    ;
 }
 
 /* MAIN */
-main{
-    height: calc(100vh - 100px);
+main {
+    height: calc(100vh - 111px);
     background-color: rgb(219, 219, 212);
+
 }
 
 
 
 /* CENTRAL PANEL */
 
-.centralPanel{
+.centralPanel {
     width: 1400px;
     height: 900px;
     position: absolute;
     left: 14%;
-    top: 4%;
+    top: 10px;
     background-color: white;
     display: flex;
 }
@@ -57,99 +59,97 @@ main{
 .rubrica {
     width: 550px;
     height: 900px;
-    
+
     flex-direction: column;
-    
+
 }
 
-.chat{
+.chat {
     /* background-image: url(/img/qwd83nc4xxf41.jpg); */
     width: calc(1400px - 550px);
     height: 900px;
     display: flex;
 }
 
-.contentTopUser{
+.contentTopUser {
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
 
-.content{
+.content {
     display: flex;
     padding: 10px;
 }
 
-.height-85{
+.height-85 {
     height: 85px;
 }
 
-.height-70{
+.height-70 {
     height: 70px;
 }
 
-.height-792{
+.height-792 {
     height: 792px;
 }
 
-img{
+img {
     width: 21%;
     border-radius: 50%;
 }
 
-.imgTop{
+.imgTop {
     width: 13%;
 }
 
-.imgTopRubrica{
+.imgTopRubrica {
     width: 17%;
 }
 
-.chat{
+.chat {
     background-image: url(../img/mine.jpg);
-    
+
 }
 
 
-.myMess{
+.myMess {
     background-color: rgb(213, 249, 186);
     height: fit-content;
     border-radius: 10%;
     padding: 10px;
     margin: 15px;
-    
+
     width: fit-content;
     float: right;
 }
 
-.yourMess{
+.yourMess {
     background-color: rgb(255, 255, 255);
     height: fit-content;
     border-radius: 10%;
     padding: 10px;
     margin: 15px;
-    
+
     width: fit-content;
-    
+
 }
 
-.overflow{
+.overflow {
     overflow-y: auto;
 }
 
 
 
-.digita{
+.digita {
     display: flex;
     flex-direction: row;
 }
 
-.active{
+.active {
     display: block;
 }
 
-.notActive{
+.notActive {
     display: none;
 }
-
-

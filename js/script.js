@@ -3,9 +3,13 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            // variabile Mess
             Mess: "",
+            // variabile cerca
             Cerca: "",
+            // variabile chat attiva
             activeChat : 0,
+            // array di oggetti
             contacts: [
                 {
                     name: 'Michele',
@@ -173,11 +177,12 @@ createApp({
        } 
     },
     methods:{
+        /* funzione contatto attivo */
         showChat: function (index) {
             this.activeChat = index;
-            console.log(index)
+            
         },
-      
+        /* funzione aggiunta messaggio */
         addMess: function() {
             let messaggioNuovo = {
                 date: "18/01/2023 17:17:00",
@@ -200,9 +205,11 @@ createApp({
             }
         },
         
+    
     },
     computed:{
-        filtro() {
+        /* funzione filtro contatti */
+        filtro: function() {
             return this.contacts.filter(
                 parola => {
                     return parola.name.toLocaleLowerCase().includes(this.Cerca.toLowerCase());
